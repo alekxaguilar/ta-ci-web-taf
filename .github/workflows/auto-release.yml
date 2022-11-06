@@ -22,13 +22,17 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build Automation projet image
         run: echo Automation project built
+        
   auto-verification:
+    needs: [build-taf]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Run Automation Tests - Release health check
         run: echo Automation project built
+        
   reporting:
+    needs: [auto-verification]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
