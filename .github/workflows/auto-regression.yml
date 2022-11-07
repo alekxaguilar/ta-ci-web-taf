@@ -1,13 +1,12 @@
 name: CI
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
-  workflow_call:
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+#   workflow_dispatch:
+#   workflow_call:
 
-jobs:
 jobs:
   build-taf:
     uses: alekxaguilar/ta-ci-web-taf/.github/workflows/auto-build.yml@main

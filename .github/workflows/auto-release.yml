@@ -10,11 +10,6 @@ on:
 jobs:
   build-taf:
     uses: alekxaguilar/ta-ci-web-taf/.github/workflows/auto-build.yml@main
-    # runs-on: ubuntu-latest
-    # steps:
-    #   - uses: actions/checkout@v3
-    #   - name: Build Automation projet image
-    #     run: echo Automation project built
 
   release-tests:
     needs: [build-taf]
@@ -27,11 +22,3 @@ jobs:
   reporting:
     needs: [release-tests]
     uses: alekxaguilar/ta-ci-web-taf/.github/workflows/auto-testresults.yml@main
-
-  # reporting:
-  #   needs: [auto-verification]
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - name: Reporting
-  #       run: echo Collecting results and notifying
