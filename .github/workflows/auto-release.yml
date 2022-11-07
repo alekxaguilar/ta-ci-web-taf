@@ -15,7 +15,7 @@ jobs:
     #   - uses: actions/checkout@v3
     #   - name: Build Automation projet image
     #     run: echo Automation project built
-        
+
   release-tests:
     needs: [build-taf]
     runs-on: ubuntu-latest
