@@ -1,0 +1,16 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  build-taf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Automation projet image
+        run: echo Automation project built        

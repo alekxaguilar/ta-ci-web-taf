@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+jobs:
+  build-taf:
+    uses: alekxaguilar/ta-ci-web-taf/.github/workflows/auto-build.yml@main
+        
+  regression-tests:
+    needs: [build-taf]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Automation Tests - Regression Test
+        run: echo Automation project built
+        
+  reporting:
+    needs: [auto-verification]
+    uses: alekxaguilar/ta-ci-web-taf/.github/workflows/auto-testresults.yml@main
