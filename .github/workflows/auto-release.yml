@@ -25,7 +25,7 @@ jobs:
         run: echo Automation project built
 
   reporting:
-    needs: [auto-verification]
+    needs: [release-tests]
     uses: alekxaguilar/ta-ci-web-taf/.github/workflows/auto-testresults.yml@main
 
   # reporting:

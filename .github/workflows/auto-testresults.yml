@@ -9,7 +9,6 @@ on:
 
 jobs:
   reporting:
-    needs: [auto-verification]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
