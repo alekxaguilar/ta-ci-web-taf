@@ -8,17 +8,17 @@ on:
   workflow_call:
 
 jobs:
-  build-taf:
+  build:
     uses: alekxaguilar/ta-ci-web-taf/.github/workflows/auto-build.yml@main
 
   release-tests:
-    needs: [build-taf]
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Run Automation Tests - Release health check
         run: echo Automation project built
 
-  reporting:
+  results:
     needs: [release-tests]
     uses: alekxaguilar/ta-ci-web-taf/.github/workflows/auto-testresults.yml@main

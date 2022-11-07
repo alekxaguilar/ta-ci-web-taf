@@ -4,7 +4,7 @@ on:
   workflow_call:
 
 jobs:
-  build-taf:
+  taf-container:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
